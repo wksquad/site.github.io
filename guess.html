@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Угадайка</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	function startGame(){
+		var answer=Math.floor(Math.random()*100)+1
+		var userAnswer
+		for (var attempt=1; userAnswer!=answer; attempt++){
+			userAnswer=(prompt('Введите число от 1 до 100'))
+			if(userAnswer=='q'){
+				alert('Игра остановлена. Было сделано '+attempt+' попыток.')
+				break;
+			}else if (userAnswer=='й') {
+				alert('Для выхода пропиши q')
+			}else if(answer==userAnswer){
+				alert('В точку! Вам потребовалось '+attempt+' попыток')
+			}else if(answer>userAnswer){
+				alert('Твое число слишком маленькое!')
+			}else if(answer<userAnswer){
+				alert('Твое число слишком большое')
+			}else
+				alert('Эй, вводи число от 1 до 100!')
+			
+		}
+	}
+
+</script>
+</head>
+<body>
+
+<div id="tooplate_body_wrapper" />
+<div id="tooplate_wrapper" />
+<div id="tooplate_header">
+	<div id="site_title">
+		<h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
+	</div>
+	<div id="tooplate_menu">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="puzzle.html">Загадки</a></li>
+			<li><a href="guess.html">Угадайка</a></li>
+			<li><a href="guessPlus.html">Угадайка+</a></li>
+		</ul>    	
+	</div>
+</div>
+    
+<div id="content_box">
+		
+	<div id="content_title">
+		<h2>Угадайка</h2>
+	</div>
+	<div id="content">
+	
+
+		<p>Я загадаю число от 1 до 100. Попробуй отгадать его. Если надоест - введи q.<p/>
+		
+		</br></br>
+
+		<input type="button" value="Начать игру" onClick="startGame()"/>
+
+	</div>
+           
+    <div id="tooplate_footer">    
+        Copyright © 2016 <a href="http://geekbrains.ru">GeekBrains</a>
+    </div>
+    
+</div> <!-- end of warpper -->
+
+</body>
+</html>
